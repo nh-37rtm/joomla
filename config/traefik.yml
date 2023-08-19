@@ -1,0 +1,21 @@
+api:
+  # Dashboard
+  #
+  # Optional
+  # Default: true
+  #
+  dashboard: true
+  insecure: true
+
+
+log:
+  level: "DEBUG"
+
+entrypoints:
+  web:
+    address: ":80"
+  mysql:
+    address: ":3306/tcp"
+
+providers:
+  docker: true

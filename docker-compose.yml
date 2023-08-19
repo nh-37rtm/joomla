@@ -1,0 +1,54 @@
+version: '3.6'
+
+services:
+
+  traefik:
+    image: traefik:v2.10.4
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "443:443"
+      - "3306:3306"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./config/traefik.yml:/etc/traefik/traefik.yml:ro"
+  mysql:
+    image: mysql:5.6
+    # build:
+    #   context: ./build/mysql
+    restart: unless-stopped
+    env_file:
+      - ./environment/mysql.env
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    labels:
+      - "traefik.enable=true"
+      - "traefik.tcp.routers.mysql.rule=HostSNI(`*`)"
+      - "traefik.tcp.routers.mysql.entrypoints=mysql"
+  php_joomla:
+    container_name: php_joomla
+    depends_on:
+      - mysql
+    build:
+      context: ./build/php-apache
+    restart: unless-stopped
+    env_file:
+      - ./environment/joomla-php.env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.joomla.rule=Host(`joomla.docker.local`)"
+      - "traefik.http.routers.joomla.entrypoints=web"
+    volumes:
+      - type: bind
+        source: ./data/joomla
+        target: /var/www/html
+        bind:
+          propagation: rshared
+  mailhog:
+    image: mailhog/mailhog:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mailhog.rule=Host(`mailhog.docker.local`)"
+      - "traefik.http.routers.mailhog.entrypoints=web"
+      - "traefik.http.services.mailhog.loadbalancer.server.port=8025"
