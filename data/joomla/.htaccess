@@ -61,6 +61,7 @@ Options -Indexes
 
 <IfModule mod_headers.c>
 Header always set X-Content-Type-Options "nosniff"
+Header set Content-Encoding gzip
 </IfModule>
 
 ## Mod_rewrite in use.
@@ -115,3 +116,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L]
 #
 ## End - Joomla! core SEF Section.
+
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+php_value sys_temp_dir /var/www/html/joomla/tmp
