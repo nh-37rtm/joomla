@@ -14,8 +14,12 @@ log:
 entrypoints:
   web:
     address: ":80"
+  websecure:
+    address: ":443"
+
   mysql:
     address: ":3306/tcp"
+
 
 providers:
   docker: true

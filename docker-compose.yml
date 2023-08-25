@@ -38,13 +38,14 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.joomla.rule=Host(`joomla.docker.local`)"
-      - "traefik.http.routers.joomla.entrypoints=web"
+      - "traefik.http.routers.joomla.entrypoints=websecure"
+      - "traefik.http.routers.joomla.tls=true"
     volumes:
       - type: bind
         source: ./data/joomla
         target: /var/www/html
-        bind:
-          propagation: rshared
+        # bind:
+        #   propagation: rshared
   mailhog:
     image: mailhog/mailhog:latest
     labels:
