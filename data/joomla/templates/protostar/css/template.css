@@ -1,3 +1,7 @@
+div.header-inner.clearfix a.brand.pull-left {
+  float: none !important;
+}
+
 article,
 aside,
 details,
@@ -10,6 +14,8 @@ nav,
 section {
 	display: block;
 }
+
+item-title
 audio,
 canvas,
 video {
@@ -20,6 +26,23 @@ video {
 audio:not([controls]) {
 	display: none;
 }
+
+.item-title
+{
+  text-align: center;
+}
+
+.banneritem
+{
+  text-align: center;
+}
+
+.header-inner 
+{ 
+  text-align: center;
+  color: #0088cc;
+}  
+
 html {
 	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -7147,6 +7170,8 @@ body.site.fluid {
 	font-size: calc(16px + 2.16vw);
 	line-height: 48px;
 	font-weight: bold;
+    color: #005e8d;
+    margin-left: 100px;
 }
 @media (min-width: 1024px) {
 	.site-title {
@@ -7166,6 +7191,7 @@ body.site.fluid {
 }
 .header {
 	margin-bottom: 10px;
+    color: #0088cc;
 }
 .header .finder {
 	margin-top: 14px;
@@ -7174,10 +7200,16 @@ body.site.fluid {
 	margin-top: 0px;
 }
 .navigation {
+    text-align: center;
 	padding: 5px 0;
 	border-top: 1px solid rgba(0,0,0,0.075);
 	border-bottom: 1px solid rgba(0,0,0,0.075);
 	margin-bottom: 10px;
+}
+.navigation .menu {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .navigation .nav-pills {
 	margin-bottom: 0;
@@ -7222,6 +7254,8 @@ h1 {
 h2 {
 	font-size: 22px;
 	line-height: 24px;
+  	text-align: center;
+    color: #005e8d;
 }
 h3 {
 	font-size: 18px;
@@ -7655,6 +7689,9 @@ div.current dd.tabs {
 	border: 1px solid #CCC;
 	background-color: #FFF;
 }
+#helpsite-refresh {
+	vertical-align: top;
+}
 #pop-print {
 	float: right;
 	margin: 10px;
@@ -7735,20 +7772,6 @@ ul.manager .height-50 .icon-folder-2 {
 }
 .header-search .mod-languages ul {
 	margin: 0 0 5px 0;
-}
-.btn-group > .versions {
-	-webkit-border-top-right-radius: 4px;
-	-moz-border-radius-topright: 4px;
-	border-top-right-radius: 4px;
-	-webkit-border-bottom-right-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	border-bottom-right-radius: 4px;
-	-webkit-border-top-left-radius: 4px;
-	-moz-border-radius-topleft: 4px;
-	border-top-left-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-left-radius: 4px;
 }
 .rtl .navigation .nav-child {
 	left: auto;

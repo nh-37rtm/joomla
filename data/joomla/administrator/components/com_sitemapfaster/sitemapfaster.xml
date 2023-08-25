@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3" method="upgrade">
+        <name>sitemap faster</name>
+        <creationDate>Mai 2014</creationDate>
+        <author>Sandro</author>
+        <authorEmail>sandro@actiaweb.com</authorEmail>
+        <authorUrl>http://www.actiaweb.com</authorUrl>
+        <copyright>Copyright 2014</copyright>
+        <license>License 2014</license>
+        <!--  The version string is recorded in the components table -->
+        <version>1.0</version>
+        <!-- The description is optional and defaults to the name -->
+        <description>sitemap component to have a faster sitemap. For information or bug contact on http://www.actiaweb.com</description>
+
+        <files folder="site">
+                <filename>index.html</filename>
+        </files>
+        <administration>
+                <!-- Administration Menu Section -->
+                <menu>SitemapFaster</menu>
+                <!-- Administration Main File Copy Section -->
+                <files folder="admin">
+                        <!-- Admin Main File Copy Section -->
+                        <filename>index.html</filename>
+                        <filename>sitemapfaster.php</filename>
+						<filename>controller.php</filename>
+                        <folder>views</folder>
+                        <folder>models</folder>                </files>								<languages folder="admin/language">					<language tag="en-GB">en-GB/en-GB.com_sitemapfaster.ini</language>					<language tag="fr-FR">fr-FR/fr-FR.com_sitemapfaster.ini</language>				</languages>
+        </administration>
+</extension>

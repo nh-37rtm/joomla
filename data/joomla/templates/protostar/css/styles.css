@@ -1,0 +1,45 @@
+/* Style général */
+
+.contour_orange-bleu {
+	border: outset;
+	border-radius: 20px;
+	border-color: orange blue blue orange;
+	padding: 15px;
+	box-shadow: 4px 4px 30px black;
+
+}
+
+.align_center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
+.style_h3 {
+	text-align: center;
+	color: #FF9600;
+	font-size: 18pt;
+	margin-top: 6px;
+	margin-bottom: 12px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.style_p {
+	font-family: arial;
+	font-size: 12pt;
+}
+
+.main_red_color {
+	color:#D8161D;
+}
+
+/* Trampoline */
+
+ul li {
+	margin-left: 10px;
+	list-style-type: none;
+}

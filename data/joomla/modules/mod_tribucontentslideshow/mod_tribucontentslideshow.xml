@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+  <name>Tribu Content Slideshow</name>
+  <author>Tribu And Co</author>
+  <creationDate>April 2013</creationDate>
+  <copyright>Copyright (C) 2014 - Tribu And Co. All rights reserved.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <authorEmail>aletoquin@tribu-and-co.fr</authorEmail>
+  <authorUrl>http://www.tribu-and-co.fr/</authorUrl>
+  <version>1.1</version>
+  <description>MOD_TRIBUCONTENTSLIDESHOW_XML_DESCRIPTION</description>
+    <files>
+    <filename module="mod_tribucontentslideshow">mod_tribucontentslideshow.php</filename>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+  </files>
+  <media folder="media" destination="mod_tribucontentslideshow">
+	<filename>index.html</filename>
+	<filename>tribu.php</filename>
+    <folder>css</folder>
+	<folder>js</folder>
+	<folder>images</folder>
+  </media>
+  <languages>
+    <language tag="fr-FR">languages/fr-FR.mod_tribucontentslideshow.ini</language>
+	<language tag="fr-FR">languages/fr-FR.mod_tribucontentslideshow.sys.ini</language>
+	<language tag="en-GB">languages/en-GB.mod_tribucontentslideshow.ini</language>
+	<language tag="en-GB">languages/en-GB.mod_tribucontentslideshow.sys.ini</language>
+  </languages>
+  <config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="module_width" type="text" default="" label="MODULE_WIDTH" description="MODULE_WIDTH_DESC" />
+			<field name="module_height" type="text" default="300" label="MODULE_HEIGHT" description="MODULE_HEIGHT_DESC" />
+			<field name="category" show_root="true" type="category" default="0"
+				extension="com_content"
+				multiple="true"
+				size="10"
+				label="JCATEGORY"
+				description="CATEGORIES_SELECTION_DESC" />
+				
+			<field name="ordering" type="list" default="created-asc" label="ARTCILES_SORTED_BY" description="ARTCILES_SORTED_BY_DESC">
+				<option value="ordering-asc">ORDERING_ASCENDING</option>
+				<option value="ordering-desc">ORDERING_DESCENDING</option>
+				<option value="created-asc">DATE_ASCENDING</option>
+				<option value="created-desc">DATE_DESCENDING</option>
+				<option value="publish_up-asc">PUBLISHED_DATE_ASCENDING</option>
+				<option value="publish_up-desc">PUBLISHED_DATE_DESCENDING</option>
+				<option value="rand-">RANDOM</option>
+			</field>
+			
+			<field name="limit_items" type="text" default="5" label="LIMIT_ITEMS" description="LIMIT_ITEMS_DESC" />
+			
+			<field name="interval" type="text" default="5" label="INTERVAL" description="INTERVAL_DESC" />
+			
+			<field name="duration" type="text" default="5" label="ANIMATION_DURATION" description="ANIMATION_DURATION_DESC" />
+			
+			<field name="direction" type="radio" class="btn-group" default="horizontal" label="DIRECTION" description="DIRECTION_DESC">
+				<option value="horizontal">HORIZONTAL</option>	
+				<option value="vertical">VERTICAL</option>
+				<option value="fade">FADE</option>
+			</field>
+			
+			<field name="auto_play" type="radio" class="btn-group" default="1" label="AUTO_PLAY" description="AUTO_PLAY_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			
+			<field
+				name="item_heading"
+				type="list"
+				default="h3"
+				label="TITLE_HEADING"
+				description="TITLE_HEADING_DESCRIPTION">
+				<option value="h2">H2</option>
+				<option value="h3">H3</option>
+				<option value="h4">H4</option>
+				<option value="h5">H5</option>
+			</field>
+		</fieldset>
+		<fieldset name="extented">
+			<field name="display_title" type="radio" class="btn-group" default="1" label="DISPLAY_TITLE" description="DISPLAY_TITLE_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="title_lenght" type="text" class="btn-group" default="50" label="TITLE_LENGHT" description="TITLE_LENGHT_DESC" />
+			<field name="display_intro" type="radio" class="btn-group" default="1" label="DISPLAY_INTRO" description="DISPLAY_INTRO_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="intro_plaintext" type="radio" class="btn-group" default="1" label="INTRO_PLAINTEXT" description="INTRO_PLAINTEXT_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="intro_plaintext_lenght" type="text" class="btn-group" default="100" label="INTRO_PLAINTEXT_LENGHT" description="INTRO_PLAINTEXT_LENGHT_DESC" />
+			<field name="display_introimg" type="radio" class="btn-group" default="1" label="DISPLAY_INTROIMG" description="DISPLAY_INTROIMG_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="resize_introimg" type="radio" class="btn-group" default="1" label="RESIZE_INTROIMG" description="RESIZE_INTROIMG_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="cropped_introimg" type="radio" class="btn-group" default="1" label="CROPPED_INTROIMG" description="CROPPED_INTROIMG_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="img_width" type="text" default="" label="DISPLAY_IMG_WIDTH" description="DISPLAY_IMG_WIDTH_DESC" />
+			<field name="img_height" type="text" default="" label="DISPLAY_IMG_HEIGHT" description="DISPLAY_IMG_HEIGHT_DESC" />
+			<field name="display_btnreadmore" type="radio" class="btn-group" default="1" label="DISPLAY_BTNREADMORE" description="DISPLAY_BTNREADMORE_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="display_btnall" type="radio" class="btn-group" default="0" label="DISPLAY_BTNALL" description="DISPLAY_BTNALL_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="link_btnall" type="menuitem" default="" label="LINK_BTNALL" description="LINK_BTNALL_DESC" >
+				<option value="">PAGE_CHOICE</option>
+			</field>
+			<field name="display_nav" type="radio" class="btn-group" default="1" label="DISPLAY_NAV" description="DISPLAY_NAV_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="display_arrow" type="radio" class="btn-group" default="0" label="DISPLAY_ARROW" description="DISPLAY_ARROW_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			<field name="buttons_mouseover" type="radio" class="btn-group" default="0" label="BUTTONS_MOUSEOVER" description="BUTTONS_MOUSEOVER_DESC">
+				<option value="1">JYES</option>	
+				<option value="0">JNO</option>
+			</field>
+			
+			<field
+				name="template"
+				type="list"
+				default="1"
+				label="TEMPLATE"
+				description="TEMPLATE_DESC">
+				<option value="1">TEMPLATE1</option>
+				<option value="2">TEMPLATE2</option>
+			</field>
+			
+		</fieldset>
+		<fieldset
+			name="advanced">
+			<field
+				name="layout"
+				type="modulelayout"
+				label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+			<field
+				name="moduleclass_sfx"
+				type="text"
+				label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+			<field
+				name="cache"
+				type="list"
+				default="1"
+				label="COM_MODULES_FIELD_CACHING_LABEL"
+				description="COM_MODULES_FIELD_CACHING_DESC">
+				<option
+					value="1">JGLOBAL_USE_GLOBAL</option>
+				<option
+					value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+			</field>
+
+			<field
+				name="cache_time"
+				type="text"
+				default="900"
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+				description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			<field
+				name="cachemode"
+				type="hidden"
+				default="static">
+				<option
+					value="static"></option>
+			</field>
+		</fieldset>
+	</fields>
+  </config>
+</extension>

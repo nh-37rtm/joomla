@@ -1,0 +1,98 @@
+/* Slider Voyages */
+
+	/* initialisation */
+	.tcslider { position:relative; overflow:visible; margin:auto; box-shadow: 0px 0px 15px 0px #656565; }
+	.tcslider .tcslider_wrapper { overflow:hidden }
+	.tcslider .content { position:relative; overflow:hidden; }
+	.tcslider .tc_controls .buttonsWrap, .tcslider .tc_controls .arrows { display:none; }
+	
+	/* styles identiques aux 2 templates */
+	.tcslider .tc_controls a.control {  }
+	.tcslider .tc_controls a.control.play, .tcslider .tc_controls a.control.pause { 
+		background:url('../images/control-slideshow.png');
+		background-repeat:no-repeat; 
+		display: inline-block; 
+		width: 8px; 
+		height: 10px;
+		text-indent:-999em;
+	}
+	.tcslider .tc_controls a.control.pause { background-position: -17px 0; }
+	.tcslider .tc_controls a.control.play { background-position: 0 0; }
+
+	/* template1 */
+	.tcslider.default .content { background:#000; color:#fff }
+	.tcslider.default .img { float:left; margin-right:20px; overflow:hidden; z-index:1; width:40%; }
+	.tcslider.default .img img { margin:0; max-width:none; }
+	.tcslider.default .description { padding:15px 30px 0 20px; }
+	.tcslider.default .description p { color:#fff }
+	.tcslider.default .description h2, .tcslider.default .description h3 { margin-top:0 }
+	.tcslider.default .readmore { /* position:absolute; bottom:15px; right:20px; margin:0; */ }
+	
+	.tcslider.default a.btn { background:#f6f7f3; background: linear-gradient(to bottom, #ffffff 0%,#f6f7f3 50%,#dfe1d4 100%); border:solid 2px #FFFFFF; color:#383B40; line-height:24px; height:24px; padding:0 10px; margin:0; box-shadow: 0px 0px 2px 0px #656565; }
+	
+	.tcslider.default .tc_controls .buttonsWrap  > div { position:absolute; bottom:5px; left:40%; margin-left:20px; }
+	.tcslider.default .tc_controls a.control { position:absolute; top:10px ; right:10px; }
+	.tcslider.default .tc_controls a.control.play, .tcslider.default .tc_controls a.control.pause { 
+		background:url('../images/control-slideshow2.png');
+	}
+	.tcslider.default .tc_controls a.control.pause { background-position: -17px 0; }
+	
+	.tcslider.default .tc_controls .nav { display:inline-block; margin:0; padding:14px 0; vertical-align:top; height:10px }
+	.tcslider.default .tc_controls .nav a.buttons { text-indent:-999em; display:inline-block; width:10px; height:10px; margin-left:5px; background:#fff; border-radius:10px; }
+	.tcslider.default .tc_controls .nav a.buttons.active, .tcslider .tc_controls .nav a.buttons:hover  { background:#0064AD; }
+	.tcslider.default a.categoryLink { position:absolute; bottom:15px; right:20px; margin:0; }
+	
+	.tcslider.default a.prev, .tcslider.default a.next { 
+		background:url('../images/arrows.png') 0 0 no-repeat;
+		z-index: 100;
+		width:38px;
+		height:38px;
+		display:inline-block;
+		text-indent: -9999px;
+		overflow: hidden;
+	}
+	.tcslider.default a.prev { }
+	.tcslider.default a.next {  background-position: -48px 0; }
+	
+	/* template2 */
+	.tcslider.template2 { margin-bottom:40px; }
+	.tcslider.template2 .content { background:#000; margin:auto; }
+	.tcslider.template2 .img { overflow:hidden; z-index:1; }
+	.tcslider.template2 .img img { max-width:100%; }
+	.tcslider.template2 .description { position:absolute; bottom:60px; right:0; width:495px; padding:10px; color:#fff; background:rgba(0, 0, 0, 0.8); }
+	.tcslider.template2 .description p { margin-bottom:0 }
+	.tcslider.template2 .description h2, .tcslider.template2 .description h3 { margin-top:0 }
+	.tcslider.template2 .readmore { position:absolute; bottom:15px; right:15px; margin:0; }
+	
+	
+	.tcslider.template2 .tc_controls .buttonsWrap {  }
+	.tcslider.template2 .tc_controls .btn_controls { position:absolute; top:5px ; right:5px; }
+	.tcslider.template2 .tc_controls .btn_controls span { display:block; float:right; background:#f6f7f3; background: linear-gradient(to bottom, #ffffff 0%,#f6f7f3 50%,#dfe1d4 100%); border:solid 2px #FFFFFF; color:#383B40; line-height:24px; height:10px; padding:7px 10px; margin:0; box-shadow: 0px 0px 2px 0px #656565; border-radius:5px; }
+	.tcslider.template2 .tc_controls .btn_controls a.control { height:24px; line-height:24px }
+	.tcslider.template2 .tc_controls .btn_controls span, .tcslider.template2 .tc_controls a.categoryLink { margin-left:10px; }
+	.tcslider.template2 .tc_controls .nav { margin:0; width:auto; position:absolute; bottom:-30px ; left:0; z-index:50; width:100%; text-align:center; height:10px; }
+	
+	.tcslider.template2 .tc_controls .nav a.buttons { text-indent:-999em; display:inline-block; width:10px; height:10px; margin-left:5px; background:#fff; box-shadow: inset 0px 0px 2px 0px #656565; border-radius:10px; }
+	.tcslider.template2 .tc_controls .nav a.buttons.active, .tcslider .tc_controls .nav a.buttons:hover  { background:#0064AD; }
+	
+	.tcslider.template2 a.btn { background:#f6f7f3; background: linear-gradient(to bottom, #ffffff 0%,#f6f7f3 50%,#dfe1d4 100%); border:solid 2px #FFFFFF; color:#383B40; line-height:24px; height:24px; padding:0 10px; margin:0; box-shadow: 0px 0px 2px 0px #656565; }
+	
+	.tcslider.template2 .arrows a { 
+		background:url('../images/arrows.png') 0 0 no-repeat;
+		position: absolute;
+		z-index: 100;
+		top: 50%;
+		margin-top:-19px;
+		width:38px;
+		height:38px;
+		display:block;
+		text-indent: -9999px;
+	}
+	.tcslider.template2 .arrows a.prev { left: -28px; }
+	.tcslider.template2 .arrows a.next { right: -28px; background-position: -48px 0; }
+	
+	/*responsive*/
+	/* @media screen and (max-width: 480px) {
+		.tcslider  { width:100%!important }
+		.tcslider .sliderContentsWrap, .tcslider .sliderContentsWrap .content  {  }
+	} */
